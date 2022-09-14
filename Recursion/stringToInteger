@@ -29,3 +29,23 @@ int main() {
     int ans = StringToInt(s,n-1);
     cout<<ans<<"\n";
 }
+/*
+int stringTonumber(char input[],int cur) {
+    if(cur<0){
+        return 0;
+    }
+    return ((input[cur]-'0')+stringTonumber(input,cur-1)*10);
+    
+    
+    
+
+
+}
+int stringToNumber(char input[]){
+ int size=0;
+    while(input[size])size++;                     // To get the size of the character and we are passing the size to evaluate for it
+    return stringTonumber(input, size-1 );
+}
+
+
+*/
