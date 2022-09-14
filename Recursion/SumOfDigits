@@ -1,4 +1,4 @@
-Write a recursive function that returns the sum of the digits of a given integer.
+/* Write a recursive function that returns the sum of the digits of a given integer.
 Input format :
 Integer N
 Output format :
@@ -9,7 +9,8 @@ Sample Input 1 :
 12345
 Sample Output 1 :
 15
-////////////
+*/
+
 int sumOfDigits(int n) {
     
 if(n==0){
