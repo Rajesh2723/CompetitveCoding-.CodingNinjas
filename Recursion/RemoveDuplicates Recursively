@@ -38,3 +38,16 @@ void removeConsecutiveDuplicates(char *input) {
      //input[i]='\0';
     
 }
+
+
+//main function
+#include <iostream>
+using namespace std;
+#include "solution.h"
+
+int main() {
+    char s[100000];
+    cin >> s;
+    removeConsecutiveDuplicates(s);
+    cout << s << endl;
+}
