@@ -1,4 +1,5 @@
-Check whether a given String S is a palindrome using recursion. Return true or false.
+ /*
+     Check whether a given String S is a palindrome using recursion. Return true or false.
 Input Format :
 String S
 Output Format :
@@ -10,7 +11,7 @@ Sample Input 1 :
 racecar
 Sample Output 1:
 true
-
+*/
 //
 #include<bits/stdc++.h>
 bool checkPalindrome(char input[],int start,int end){
