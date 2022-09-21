@@ -1,3 +1,4 @@
+/*
 Given a string S, remove consecutive duplicates from it recursively.
 Input Format :
 String S
@@ -10,7 +11,7 @@ Sample Input 1 :
 aabccba
 Sample Output 1 :
 abcba
-//
+*/
 #include<bits/stdc++.h>
 void removeConsecutiveDuplicates(char *input) {
 	/* Don't write main().
