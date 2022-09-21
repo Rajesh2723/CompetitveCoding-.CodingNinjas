@@ -7,7 +7,8 @@ xpix
 Sample Output :
 x3.14x
 
-//
+
+
 #include<cstring>
 void replacePi(char input[]) {
 	int n=strlen(input);
