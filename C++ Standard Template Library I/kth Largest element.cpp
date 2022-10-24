@@ -62,13 +62,7 @@ int main() {
 /*
 #include<bits/stdc++.h>
 vector<int> kLargest(int arr[], int n, int k) {
-    vector<int>v;
-  /* sort(arr,arr+n,greater<int>());
-    for(int i=0;i<k;i++){
-        v.push_back(arr[i]);
-    }
-    return v;
-       
+    vector<int>v;  
     priority_queue<int>pq;
     for(int i=0;i<n;i++){
         pq.push(arr[i]);
