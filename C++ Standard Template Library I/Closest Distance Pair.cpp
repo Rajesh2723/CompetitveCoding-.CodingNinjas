@@ -39,7 +39,7 @@ Sample Output 2 :
 Explanation of Sample Output 1 :
 If we choose the pairs (0, 0) and (-3, -4), the distance between them is 3^2 + 4^2 = 25. This is the optimal answer for this test case.
 */
-/*
+
 bruteforce approach we will get a TLE for this
 #include <climits>
 
