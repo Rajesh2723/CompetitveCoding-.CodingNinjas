@@ -41,7 +41,7 @@ int binarysearch(Job *arr,int index){
     int end=index-1;
     while(start<=end){
         int mid=(start+end)/2;
-        if(arr[mid].finish<=arr[index].start){
+        if(arr[mid].finish<=arr[index].start){  //if(arr[index].start>=arr[mid].finish)
             ans=mid;
             start=mid+1;
         }else{
