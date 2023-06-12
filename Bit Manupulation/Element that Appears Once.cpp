@@ -49,3 +49,42 @@ int elementThatAppearsOnce(vector<int> arr) {
 	 return 0;
 	  
 }
+
+/*
+#include<iostream>
+
+using namespace std;
+int main(){
+	
+	int t , n;
+
+	cin>>t;
+	while(t--){
+		cin>>n;
+
+		int ar[n];
+		int res = 0;
+
+		for(int i=0;i<n;i++) cin>>ar[i];
+
+		int f[32] = {0};
+
+		for(int i=0;i<32;i++){
+			for(int j=0;j<n;j++){
+
+				if(ar[j] & (1 << i)) f[i]++;
+
+			}
+		}
+
+		for(int i=0;i<32;i++)
+			if(f[i] % 3 == 1){
+				res += (1 << i);
+			}
+
+		cout<<res<<endl;
+	}
+
+}
+*/
+
