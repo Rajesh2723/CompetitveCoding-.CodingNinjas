@@ -183,3 +183,27 @@ int maxOfK(int n, int k, vector<int> &num)
     }
     return sum;
 }
+/*
+int maxOfK(int n, int k, vector<int> &num)
+{
+   int cur_sum=0;
+   for(int i=0;i<n;i++){
+       if(k==0||k>n){
+           return ;
+       }
+   }
+   int maxi=INT_MAX;
+   for(int i=0;i<n;i++){
+       if(i<k){
+           cur_sum+=nums[i];
+       }else if(i==k-1){
+           maxi=max(maxi,cur_sum);
+       }else if(i>=k){
+           cur_sum+=nums[i];
+           cur_sum-=a[i-k];
+           maxi=max(maxi,cur_sum);
+       }
+   }
+   return maxi;
+}
+*/
