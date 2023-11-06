@@ -78,3 +78,31 @@ vector<int> sortArrayByKBit(int n, int k, vector<int> &arr) {
   // Return modified array.
   return arr;
 }
+/*
+bool isKthBitSet(int num, int K){
+return (num&(1<<(K-1)))!= 0;
+}
+//Now sort the vector as per problem need.
+vector<int>sortArrayByKBit(int n, int K, vector<int>arr){
+//initialize three vectors one for to store kth bit is zero and other is to store if kh bit is 1 and third one is to store resultant sorted vector.
+
+vector<int>zeros, ones, result;
+
+//now traverse the input vector and store the element int zeros, ones vector's 
+
+for(int i=0;i<arr.size();i++){
+if(isKthBitSet(arr[i], K)){
+ones.push_back(arr[i]);
+}
+else{
+zeros.push_back(arr[i]);
+}
+}
+//Now insert all zeros and ones in an resultant vector.
+
+result.insert(result.end(), zeros.begin(), zeros.end());
+result.insert(result.end(), ones.begin(), ones.end());
+return result;
+
+}
+*/
