@@ -1,5 +1,6 @@
 /*
 Aggressive Cows
+You have a set of stalls, each of which can accommodate one cow. You want to place the maximum number of cows in the stalls while ensuring that the minimum distance between any two cows is as large as possible. Given the positions of the stalls and the number of cows, find the maximum possible minimum distance between any two cows.
 Send Feedback
 Given an array of length ‘N’, where each element denotes the position of a stall. Now you have ‘N’ stalls and an integer ‘K’ which denotes the number of cows that are aggressive. To prevent the cows from hurting each other, you need to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. Return the largest minimum distance.
 Input format :
