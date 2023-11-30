@@ -149,3 +149,23 @@ int main()
     runner.executeAndPrintOutput();
     return 0;
 }
+/*
+void f(int index,vector<int>&arr,vector<int>&result,vector<vector<int>>&ans){
+    if(index>=arr.size()){
+        ans.push_back(result);
+        return;
+    }
+
+    result.push_back(arr[index]);
+    f(index+1,arr,result,ans);
+    result.pop_back();
+    f(index+1,arr,result,ans);
+}
+vector<vector<int>> FindAllSubsets(vector<int> &arr){
+   vector<vector<int>>ans;
+   int n=arr.size();
+   vector<int>result;
+   f(0,arr,result,ans);
+   return ans;
+}
+*/
