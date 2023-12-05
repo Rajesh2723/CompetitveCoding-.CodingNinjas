@@ -107,7 +107,7 @@ int main(){
        int n;
        cin>>n;
          int k;//wrote this lines on line 115 gave the wrong answer ,writing after n gave the correct answer..
-       cin>>k;
+       cin>>k;//int k; cin>>k; should be just after the int n;cin>>n;
        int *arr=new int[n];
        for(int i=0;i<n;i++){
            cin>>arr[i];
