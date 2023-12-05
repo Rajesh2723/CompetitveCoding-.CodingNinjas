@@ -314,3 +314,64 @@ int main() {
     return 0;
 }
 */
+/*  passed all test cases..
+#include<bits/stdc++.h>
+void findAllPaths(vector<vector<bool>>&arr,int x,int y,vector<char>&path,vector<string>&ans){
+    int n=arr.size();
+    int m=arr[0].size();
+     if(arr[n-1][m-1]==0){
+        return;
+    }
+    if(x==n-1 and y==m-1){
+        string s(path.begin(),path.end());
+        ans.push_back(s);
+        return ;
+    }
+   
+    if(x<0 ||y<0||arr[x][y]==0||x>=n||y>=m){
+        return;
+    }
+
+    arr[x][y]=0;
+    path.push_back('D');
+    if(x+1<n){
+        findAllPaths(arr, x+1, y, path, ans);
+    }
+    
+    path.pop_back();
+    
+    path.push_back('R');
+    if(y+1<m){
+         findAllPaths(arr, x, y+1, path, ans);
+    }
+   
+    path.pop_back();
+    path.push_back('U');
+    if(x-1>=0){
+         findAllPaths(arr, x-1, y, path, ans);
+    }
+   
+    path.pop_back();
+    path.push_back('L');
+    if(y-1>=0){
+        findAllPaths(arr, x, y-1, path, ans);
+    }
+    
+    path.pop_back();
+    arr[x][y]=1;
+}
+
+vector<string> findAllPaths( vector<vector<bool>> &arr)
+{
+    vector<string>ans;
+    
+   if (arr.empty()  ) {
+        return ans;
+    }
+    vector<char>path;
+
+ findAllPaths(arr,0,0,path,ans);
+    return ans;
+
+}
+*/
