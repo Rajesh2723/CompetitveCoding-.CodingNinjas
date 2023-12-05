@@ -41,14 +41,14 @@ Since no possible configuration exists for 3 Queen's.The output remains Empty.
 bool isValid(int row, int col, vector<vector<int>>& board, int n) {
     // Check if there is a queen in the same row
     for (int i = 0; i < n; i++) {
-        if (board[row][i] == 1) {
+        if (board[row][i] == 1) {//row constant
             return false;
         }
     }
     
     // Check if there is a queen in the same column
     for (int i = 0; i < n; i++) {
-        if (board[i][col] == 1) {
+        if (board[i][col] == 1) {//column constant
             return false;
         }
     }
