@@ -236,3 +236,81 @@ int main()
 
     return 0;
 }
+/*
+#include <bits/stdc++.h>
+using namespace std;
+
+void findAllPaths(vector<vector<bool>>& arr, int x, int y, vector<char>& path, vector<string>& ans) {
+    int n = arr.size();
+    int m = arr[0].size();
+
+    // Check if the current cell is out of bounds or blocked
+    if (x < 0 || y < 0 || x >= n || y >= m || arr[x][y] == 0) {
+        return;
+    }
+
+    // Check if we reached the bottom-right corner
+    if (x == n - 1 && y == m - 1) {
+        string s(path.begin(), path.end());
+        ans.push_back(s);
+        return;
+    }
+
+    // Mark the current cell as visited
+    arr[x][y] = 0;
+
+    // Explore down
+    path.push_back('D');
+    findAllPaths(arr, x + 1, y, path, ans);
+    path.pop_back();
+
+    // Explore right
+    path.push_back('R');
+    findAllPaths(arr, x, y + 1, path, ans);
+    path.pop_back();
+
+    // Explore up
+    path.push_back('U');
+    findAllPaths(arr, x - 1, y, path, ans);
+    path.pop_back();
+
+    // Explore left
+    path.push_back('L');
+    findAllPaths(arr, x, y - 1, path, ans);
+    path.pop_back();
+
+    // Mark the current cell as unvisited (backtrack)
+    arr[x][y] = 1;
+}
+
+vector<string> findAllPaths(vector<vector<bool>>& arr) {
+    vector<string> ans;
+
+    if (arr.empty() || arr[0].empty()) {
+        return ans;
+    }
+
+    vector<char> path;
+    findAllPaths(arr, 0, 0, path, ans);
+    return ans;
+}
+
+int main() {
+    // Example usage
+    vector<vector<bool>> maze = {
+        {1, 0, 1, 1},
+        {1, 1, 1, 0},
+        {0, 0, 1, 1},
+        {1, 1, 1, 1}
+    };
+
+    vector<string> paths = findAllPaths(maze);
+
+    // Print the paths
+    for (const auto& path : paths) {
+        cout << path << endl;
+    }
+
+    return 0;
+}
+*/
