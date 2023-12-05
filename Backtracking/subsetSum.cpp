@@ -77,3 +77,47 @@ int main(){
    
     return 0;
 }
+/*
+ #include<bits/stdc++.h>
+using namespace std;
+
+int subset(int *arr,int k,int n, int index ){
+        if(index>=n){
+            if(k==0){
+               return 1;
+            }else{
+                return 0;
+            }
+             
+        }
+        int count=0;
+        if(arr[index]<=k){
+          count+=subset(arr,k-arr[index],n,index+1 );
+
+        }
+     count+=subset(arr, k, n, index+1 );
+    return count;
+}       
+
+int main(){
+    
+   int t;
+   cin>>t;
+   while(t--){
+       int n;
+       cin>>n;
+         int k;//wrote this lines on line 115 gave the wrong answer ,writing after n gave the correct answer..
+       cin>>k;
+       int *arr=new int[n];
+       for(int i=0;i<n;i++){
+           cin>>arr[i];
+       }
+     
+       vector<int>ans;
+    //    int count=0;
+       int result=subset(arr,k,n,0);
+        cout<<result<<endl;
+   }
+    return 0;
+}
+*/
