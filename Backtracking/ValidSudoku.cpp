@@ -151,4 +151,18 @@ bool isItSudoku(int matrix[9][9]) {
 
 }
 
- 
+ /*
+The expression 3*(row/3)+i/3 calculates the row index within the 3x3 subgrid, and 3*(col/3)+i%3 calculates the column index within the 3x3 subgrid. The variable i is likely a loop variable ranging from 0 to 8, iterating over all the cells within the 3x3 subgrid.
+   Here's a step-by-step explanation:
+
+    row/3 and col/3: These divisions by 3 determine which 3x3 subgrid the cell (row, col) belongs to. It essentially maps each 3x3 subgrid to a unique value.
+
+    3*(row/3)+i/3: This expression calculates the row index within the 3x3 subgrid. It combines the information about the 3x3 subgrid and the loop variable i to determine the row within that subgrid.
+
+    3*(col/3)+i%3: This expression calculates the column index within the 3x3 subgrid in a similar manner.
+
+    matrix[3*(row/3)+i/3][3*(col/3)+i%3]: This accesses the value in the cell within the 3x3 subgrid specified by the calculated row and column indices.
+
+    ==num: This checks if the value in the selected cell is equal to the number num.
+   */
+
