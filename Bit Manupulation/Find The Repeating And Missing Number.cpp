@@ -59,7 +59,7 @@ vector<int> findRepeatingAndMissingNumbers(vector<int> nums)
    for(int i = 0 ; i<nums.size();i++){
        res = res^nums[i];
    }
-   for (int i = 1; i <= nums.size(); i++) {
+   for (int i = 1; i <= nums.size(); i++) {//taking values from 1 to n
      res = res^i;
    }
 
@@ -73,7 +73,7 @@ vector<int> findRepeatingAndMissingNumbers(vector<int> nums)
          y = y ^ nums[i];
        }
    }
-   for (int i = 1; i <= nums.size(); i++) {
+   for (int i = 1; i <= nums.size(); i++) {//considering values from 1 to n
      if (i & bit) {//if bit set or not based on that seperating
        x = x ^ i;//seperating i values from 1 to n based on bit is set or not(int bit = res & ~(res -1))
      } else {
