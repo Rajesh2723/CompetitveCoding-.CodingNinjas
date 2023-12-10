@@ -52,3 +52,4 @@ vector<int> primeNumbersTillN(int n)
       
         return ans;
 }
+//Sieve of Eratosthenes has a time complexity of O(n log log n)
