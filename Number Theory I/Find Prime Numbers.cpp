@@ -37,12 +37,12 @@ vector<int> primeNumbersTillN(int n)
        vector<int> ans;
    
          
-        for(int i = 2; i*i<= n; i++)
+        for(int i = 2; i*i<= n; i++)//pairs are present before and after sqrt(n) so we reduced the iterations
         {
             if(prime[i])
             {
-                for(int j = i*i; j<=n; j = j+i)
-                    prime[j] = 0;
+                for(int j = i*i; j<=n; j = j+i) //check for multiples like so that elements are decreased of checking
+                    prime[j] = 0;//marked false
             }
         }
         
