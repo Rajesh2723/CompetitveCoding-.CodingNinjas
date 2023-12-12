@@ -93,3 +93,65 @@ int main(){
     }
     return 0;
 }
+/*
+#include<bits/stdc++.h>
+using namespace std;
+long long n=100001;
+bool sieve[100001];
+void createSieve(){
+        for(int i=2;i<=n;i++){
+            sieve[i]=true;
+        }
+        for(int i=2;i*i<=n;i++){
+                if(sieve[i]){
+                    for(int j=i*i;j<=n;j+=i){
+                        sieve[j]=false;
+                    }
+                }
+        }
+}
+vector<int>generatePrime(long long n){
+    vector<int>ds;
+    for(int i=2;i<=n;i++){
+        if(sieve[i]==true){
+            ds.push_back(i);
+        }
+    }
+    return ds;
+}
+int main(){
+    createSieve();
+    long long  t;
+    cin>>t;
+    while(t--){
+        long long l,r;
+        cin>>l>>r;
+        if(l<2){
+            l=2;
+        }
+        vector<int>primes=generatePrime(sqrt(r));
+       vector<int>dummy(r-l+1);
+        for(int i=0;i<r-l+1;i++){
+            dummy[i]=1;
+        }
+        for(auto pr:primes){
+            int firstMultiple=(l/pr)*pr;
+            if(firstMultiple<l)firstMultiple+=pr;
+            for(int j=max(firstMultiple,pr*pr);j<=r;j+=pr){
+                dummy[j-l]=0;
+            }
+            // if (firstMultiple == pr) {
+            //     dummy[firstMultiple - l] = 0;
+            // }
+        }
+        for(int i=l;i<=r;i++){
+            if(dummy[i-l]==1){
+                cout<<i<<" ";
+            }
+        }
+        cout<<endl;
+    }
+   
+    return 0;
+}
+*/
