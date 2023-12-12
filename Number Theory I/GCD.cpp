@@ -37,3 +37,38 @@ int main(){
     }
    
 }
+/*
+#include <bits/stdc++.h>
+using namespace std;
+
+// int findGcd(int x, int y) {  return __gcd(x,y); }  
+// int findGcd(int a,int b){
+//     int result=min(a,b);
+//     while(result>0){
+//         if(a%result==0 and b%result==0){
+//             break;
+//         }
+//         result--;
+//     }
+//     return result;
+// }
+int findGcd(int a,int b){
+    if(b==0){
+        return a;
+    }
+    return findGcd(b, a%b);
+}
+int main(){
+    int a,b,q;
+    cin>>q;
+    while(q--){
+       cin>>a>>b;
+    
+    cout<<findGcd(a,b)<<endl;
+    
+    // cout<<findGcd(a,b)<<endl;
+    }
+   
+}
+*/
+
