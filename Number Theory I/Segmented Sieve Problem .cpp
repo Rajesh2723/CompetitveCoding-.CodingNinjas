@@ -97,7 +97,8 @@ int main(){
 #include<bits/stdc++.h>
 using namespace std;
 long long n=100001;
-bool sieve[100001];
+bool sieve[100001];//because array initialisation cannot be done with a variable
+if you want to use n+1 then declare n as const int n
 void createSieve(){
         for(int i=2;i<=n;i++){
             sieve[i]=true;
