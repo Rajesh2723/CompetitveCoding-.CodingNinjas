@@ -93,7 +93,7 @@ int main(){
     }
     return 0;
 }
-/*
+/* this code works good(refer)
 #include<bits/stdc++.h>
 using namespace std;
 long long n=100001;
