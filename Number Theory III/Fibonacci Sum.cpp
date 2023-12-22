@@ -75,7 +75,7 @@ long long fibSum(long long n){
     
     if(n == 0) return 0;
     
-    long long T[2][2] = {{1 , 1} , {1 , 0}};
+    long long T[2][2] = {{1 , 1} , {1 , 0}};//So, if you start with the vector [F(1),F(0)][F(1),F(0)], repeatedly multiplying it by the matrix TT will generate the Fibonacci sequence. For example, after one multiplication, you get [F(2),F(1)][F(2),F(1)], after two multiplications, you get [F(3),F(2)][F(3),F(2)], and so on.
     long long res[2][2] = {{1 , 0} , {0 , 1}};
     
     while(n > 0){
