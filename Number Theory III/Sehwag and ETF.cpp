@@ -41,9 +41,9 @@ void primeCheck(bool primes[])
 
 double solve(bool primes[], ll phi[], ll num[], ll a, ll b, ll k)
 {
-    for (ll i = a; i <= b; i++)
+    for (ll i = a; i <= b; i++) //take a=2 b=7
     {
-        phi[i - a] = i;
+        phi[i - a] = i;//phi values=phi[0],phi[1],phi[2],phi[3],phi[4] values are 2,3,4,5,6 respectively
         num[i - a] = i;
     }
     vector<int> p;
