@@ -59,7 +59,7 @@ double solve(bool primes[], ll phi[], ll num[], ll a, ll b, ll k)
         ll base = a / p[i] * p[i];
 
         while (base < a) //if base is less than a which means not in range ,range starts from a to b
-            base += p[i];
+            base += p[i];//to make start from a we are adding phi values to it
 
         for (ll j = base; j <= b; j += p[i])
         {
