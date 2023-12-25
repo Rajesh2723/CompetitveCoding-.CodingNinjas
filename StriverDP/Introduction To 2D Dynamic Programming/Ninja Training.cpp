@@ -5,7 +5,7 @@ We are given a 2D Array POINTS of size ‘N*3’ which tells us the merit point 
 Create a dp array of size [n][4]. There are total ‘n’ days and for every day, there can be 4 choices (0,1,2 and 3). Therefore we take the dp array as dp[n][4].
 Whenever we want to find the answer of particular parameters (say f(day,last)), we first check whether the answer is already calculated using the dp array(i.e dp[day][last]!= -1 ). If yes, simply return the value from the dp array.
 If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[day][last] to the solution we get.
-*/
+ */ //memoization
 int f(int day,int last,vector<vector<int>>&points,vector<vector<int>>&dp){
     if(day==0){
         int maxi=0;
