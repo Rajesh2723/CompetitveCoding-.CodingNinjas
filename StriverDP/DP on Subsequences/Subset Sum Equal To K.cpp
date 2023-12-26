@@ -7,7 +7,8 @@ Note: Return true if there exists a subset with sum equal to ‘K’. Otherwise,
 For Example :
 If ‘ARR’ is {1,2,3,4} and ‘K’ = 4, then there exists 2 subsets with sum = 4. These are {1,3} and {4}. Hence, return true.
   */
-//memoization code
+//memoization code(refer:https://lh4.googleusercontent.com/78km0lvY5WD_q5H3fJPcdXpwFoAjQueE1brTZN-IGImd_YyS9DFPgLyyNaZGxHJ3fwBznyuU1VDEy8CrgNkKCZtK7rKZA1KtJp04UhE6kHMI56eJA0fH9V0uZEvEu4nbxXyqjuAH
+
 #include <bits/stdc++.h> 
 bool findPartition(int index,vector<int>&nums,vector<vector<int>>&dp,int k){
      if(k==0){
