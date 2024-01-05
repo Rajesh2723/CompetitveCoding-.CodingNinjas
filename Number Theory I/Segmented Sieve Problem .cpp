@@ -111,7 +111,7 @@ void createSieve(){
                 }
         }
 }
-vector<int>generatePrime(long long n){
+vector<int>generatePrime(long long n){//function to print all prime numbers
     vector<int>ds;
     for(int i=2;i<=n;i++){
         if(sieve[i]==true){
@@ -131,7 +131,7 @@ int main(){
             l=2;
         }
         vector<int>primes=generatePrime(sqrt(r));
-       vector<int>dummy(r-l+1);
+       vector<int>dummy(r-l+1);//create size of r-l+1 with 10 power 5
         for(int i=0;i<r-l+1;i++){
             dummy[i]=1;
         }
