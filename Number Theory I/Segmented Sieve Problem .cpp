@@ -138,7 +138,7 @@ int main(){
         for(auto pr:primes){//main function for this problem
             int firstMultiple=(l/pr)*pr;
             if(firstMultiple<l)firstMultiple+=pr;
-            for(int j=max(firstMultiple,pr*pr);j<=r;j+=pr){
+            for(int j=max(firstMultiple,pr*pr);j<=r;j+=pr){//for all multiples of primes we are marking false 
                 dummy[j-l]=0;
             }
             // if (firstMultiple == pr) {
