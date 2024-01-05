@@ -19,7 +19,11 @@ int solve(int n){
     memset(primeCount,0,sizeof(primeCount));
     for(int i=2;i<=n;i++){
         if(isPrime[i]==true){
-            for(int j=2;j*i<=n;j++){
+            for(int j=2;j*i<=n;j++){//i=2 it takes 2,4,6,8,10
+             //i=3 it takes 6,
+             //i=4 it takes 8
+             //i=5 it takes 10
+             //6 appears twice and 10 also
                 isPrime[i*j]=false;
                 primeCount[i*j]++;
             }
