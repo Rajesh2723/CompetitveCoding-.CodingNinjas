@@ -3,12 +3,18 @@ A number is called super-prime if it has exactly two distinct prime divisors
 input:10
 ouput:2
 */
- 
+ /*
+  void* memset(void* ptr, int value, size_t num);
+ptr: Pointer to the block of memory to fill.
+value: Value to be set. It is passed as an int, but it is converted to an unsigned char when stored in the memory.
+num: Number of bytes to be set to the value.
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 int solve(int n){
     bool isPrime[n+1];
-    memset(isPrime,true,sizeof(isPrime));
+    memset(isPrime,true,sizeof(isPrime));// used to set a block of memory to a specific value.
     int primeCount[n+1];
     memset(primeCount,0,sizeof(primeCount));
     for(int i=2;i<=n;i++){
