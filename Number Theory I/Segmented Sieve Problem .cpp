@@ -135,7 +135,7 @@ int main(){
         for(int i=0;i<r-l+1;i++){
             dummy[i]=1;
         }
-        for(auto pr:primes){
+        for(auto pr:primes){//main function for this problem
             int firstMultiple=(l/pr)*pr;
             if(firstMultiple<l)firstMultiple+=pr;
             for(int j=max(firstMultiple,pr*pr);j<=r;j+=pr){
