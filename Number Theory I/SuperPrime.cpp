@@ -23,7 +23,7 @@ int solve(int n){
              //i=3 it takes 6,
              //i=4 it takes 8
              //i=5 it takes 10
-             //6 appears twice and 10 also
+             //6 appears twice and 10 also .it returns count=2
                 isPrime[i*j]=false;
                 primeCount[i*j]++;
             }
