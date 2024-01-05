@@ -121,7 +121,7 @@ vector<int>generatePrime(long long n){//function to print all prime numbers
     return ds;
 }
 int main(){
-    createSieve();
+    createSieve(); 
     long long  t;
     cin>>t;
     while(t--){
