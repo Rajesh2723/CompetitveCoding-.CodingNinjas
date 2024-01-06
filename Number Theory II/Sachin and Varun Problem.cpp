@@ -50,11 +50,11 @@ int main(){
         
         if(d % g == 0){
             
-            x = x * (d / g);
+            x = x * (d / g);//if d is divisible by g then we have to scale the ax+by for this we have to multiply d/g so will get below equations a,b are constants
             y = y * (d / g);
             
-            long long L = ceil(-1.0 * x / (b/g));
-            long long R = floor(1.0 * y / (a/g));
+            long long L = ceil(-1.0 * x / (b/g));//3.6 to 4
+            long long R = floor(1.0 * y / (a/g));//6.8 to 6
             
             if(L > R) cout<<0<<endl;
             else      cout<<R - L + 1<<endl;
