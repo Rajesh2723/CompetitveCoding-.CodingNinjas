@@ -18,7 +18,7 @@ Sample Output:
   */
 #include<bits/stdc++.h>
 using namespace std;
-const int n=200000;
+const int n=200000;//declared 2*10^5 this is N given
 
   
 vector<int>primes;
