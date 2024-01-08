@@ -111,12 +111,12 @@ using namespace std;
 const int N = 1000000;
 int phi[N+1];
 
-void preproccess(){
+void preproccess(){//finds phi for gcd(i,N)=1,for all N.(i=0:i<N;i++)
 
 	for(int i=1;i<=N;i++) phi[i] = i;
 
 	for(int i=2;i<=N;i++)
-	if(phi[i] == i)
+	if(phi[i] == i)//if value not changed eg:2->2,6,8,10.3->3,6,9.6 came in both 2 and 3 so its multiples not checked.
 	{
 		for(int j=i;j<=N;j+=i)
 		{
@@ -131,11 +131,11 @@ long long gcdSum(int n){
 	long long result = 0;
 
 	for(long long i=1;i*i<=n;i++)
-		if(n % i == 0){
-			long long d1 = i;
-			long long d2 = n / d1;
+		if(n % i == 0){//get factors of n and pass them to phi,for 15->1,3,5,15.phi(15/d)
+			long long d1 = i;//i is one of factor
+			long long d2 = n / d1;//checking for (15/d)
 
-			result = result + d1 * phi[n / d1];
+			result = result + d1 * phi[n / d1];//pass values factors of n,phi(15/3)=phi(3) for all phi(1,3),phi(2,3).
 
 			if(d1 != d2)
 			result = result + d2 * phi[n / d2];
