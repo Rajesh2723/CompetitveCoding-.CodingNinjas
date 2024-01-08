@@ -103,3 +103,57 @@ long long gcdSum(int n)
     // Return answer.
     return answer;
 }
+/*
+#include<iostream>
+
+using namespace std;
+
+const int N = 1000000;
+int phi[N+1];
+
+void preproccess(){
+
+	for(int i=1;i<=N;i++) phi[i] = i;
+
+	for(int i=2;i<=N;i++)
+	if(phi[i] == i)
+	{
+		for(int j=i;j<=N;j+=i)
+		{
+			phi[j] = phi[j] / i;
+			phi[j] = phi[j] * (i - 1);
+		}
+	}
+}
+
+long long gcdSum(int n){
+
+	long long result = 0;
+
+	for(long long i=1;i*i<=n;i++)
+		if(n % i == 0){
+			long long d1 = i;
+			long long d2 = n / d1;
+
+			result = result + d1 * phi[n / d1];
+
+			if(d1 != d2)
+			result = result + d2 * phi[n / d2];
+		}
+
+	return result;
+}
+
+int main(){
+	int t , n;
+
+	cin>>t;
+	preproccess();
+	while(t--){
+		cin>>n;
+
+		cout<<gcdSum(n)<<endl;
+	}
+}
+*/
+
