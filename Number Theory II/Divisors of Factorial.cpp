@@ -53,11 +53,11 @@ long long divisorCount(long long n){
             int count = 0;
             
             while(p <= n) {
-                count = count + n / p;
-                p = p * primes[i];
+                count = count + n / p;//[n/p]+[n/p2]...+[n/pk].
+                p = p * primes[i];//update p
             }
             
-            res = ((res % mod) * ((count + 1) % mod)) % mod;
+            res = ((res % mod) * ((count + 1) % mod)) % mod;//update individual count to res (a1+1)->(count+1).
             
         }
     	else{
