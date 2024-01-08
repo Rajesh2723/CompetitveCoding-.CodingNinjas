@@ -47,7 +47,7 @@ long long divisorCount(long long n){
     long long res = 1;
     
     for(int i=0;i<primes.size();i++)
-        if(primes[i]<=n){
+        if(primes[i]<=n){//take each prime number 
             
             int p = primes[i];
             int count = 0;
