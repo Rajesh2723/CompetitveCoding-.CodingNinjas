@@ -67,8 +67,8 @@ int ninjaAndCoins(int n, int k, vector<int> &coins)
      for(int i=0;i<=n;i++){
          dp[i][0]=1;
      }
-     for(int i=0;i<n;i++){
-         for(int j=0;j<=k;j++){
+     for(int i=0;i<n;i++){//i refers index value
+         for(int j=0;j<=k;j++){//j referes to target value
 
             // Sun is equal to 0.
             if (j == 0) {
@@ -87,7 +87,7 @@ int ninjaAndCoins(int n, int k, vector<int> &coins)
 
              dp[i][j] = dp[i - 1][j];
              if(j>=coins[i]){
-                 dp[i][j] = (dp[i][j] + dp[i - 1][j - coins[i]]) % mod;
+                 dp[i][j] = (dp[i][j] + dp[i - 1][j - coins[i]]) % mod;//taking coins[i] and decrementing target 
              }
          }
      }
