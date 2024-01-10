@@ -19,22 +19,28 @@ so starting from 0, it will go to 1 then 2
 then 3. After this 2 to 4, thus bfs will be
 0 1 2 3 4.
   */
- vector<int> bfsOfGraph(int V, vector<int> adj[]) {
-         vector<int>ans;
-         queue<int>q;
-         q.push(0);//starting node from 0.
-         int vis[V]={0};
-         vis[0]=1;
-         while(!q.empty()){
-             int node=q.front();
-             q.pop();
-             ans.push_back(node);
-             for(auto it:adj[node]){
-                 if(!vis[it]){
-                     vis[it]=1;
-                     q.push(it);
-                 }
-             }
-         }
-         return ans;
+vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+        int vis[V] = {0}; 
+        vis[0] = 1; 
+        queue<int> q;
+        // push the initial starting node 
+        q.push(0); 
+        vector<int> bfs; 
+        // iterate till the queue is empty 
+        while(!q.empty()) {
+           // get the topmost element in the queue 
+            int node = q.front(); 
+            q.pop(); 
+            bfs.push_back(node); 
+            // traverse for all its neighbours 
+            for(auto it : adj[node]) {
+                // if the neighbour has previously not been visited, 
+                // store in Q and mark as visited 
+                if(!vis[it]) {
+                    vis[it] = 1; 
+                    q.push(it); 
+                }
+            }
+        }
+        return bfs; 
     }
