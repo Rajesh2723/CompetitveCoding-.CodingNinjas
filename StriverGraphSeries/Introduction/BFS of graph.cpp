@@ -22,7 +22,7 @@ then 3. After this 2 to 4, thus bfs will be
  vector<int> bfsOfGraph(int V, vector<int> adj[]) {
          vector<int>ans;
          queue<int>q;
-         q.push(0);//1 based indexing
+         q.push(0);//starting node from 0.
          int vis[V]={0};
          vis[0]=1;
          while(!q.empty()){
