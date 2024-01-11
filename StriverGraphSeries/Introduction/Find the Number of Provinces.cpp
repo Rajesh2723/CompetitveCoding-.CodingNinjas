@@ -71,7 +71,7 @@ void dfs(int node, vector<int> adj[], int visited[]) {
 }
 
 int findNumOfProvinces(vector<vector<int>>& roads, int n) {
-    vector<int> adj[n];
+    vector<int> adj[n];//it holds vector of vectors used mainly in graphs 
     int visited[n] = {0};
     int count = 0;
 
