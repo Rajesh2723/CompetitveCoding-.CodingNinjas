@@ -73,78 +73,120 @@ Sample Output 2:
 	For a graph with ‘n’ vertices to be connected, there must be at least ‘N’-1 edges in the graph. If a graph has less than ‘N’-1 edges it is impossible to make the graph connected. Otherwise, it is always possible to make graph connected. As we need to find the minimum number of operations to make the graph connected we will think greedily. We will find the total number of connected components in the graph. We can treat each connected component in the graph as a single vertex. Basically, we want to shift edges such that these components become connected. Therefore answer will be the total number of connected components - 1. We can find the total number of connected components using disjoint set union.
 	*/
 
-class DisjointSet{
-    vector<int> rank,size,parent;
+class Disjoint{
+
     public:
-    DisjointSet(int n){
-        rank.resize(n+1,0);
+
+    vector<int>parent,size;
+
+    Disjoint(int n){
+
         size.resize(n+1,1);
-        parent.resize(n+1,0);
-        for(int i=0;i<=n;++i){
+
+        parent.resize(n+1);
+
+        for(int i=0;i<=n;i++){
+
             parent[i]=i;
+
         }
+
     }
-    int findUParent(int node){
-        if(node==parent[node]){
+
+    int findUpar(int node){
+
+        if(node == parent[node]){
+
             return node;
+
         }
-        return parent[node]=findUParent(parent[node]);
+
+        return parent[node]=findUpar(parent[node]);
+
     }
-    void unoinByRank(int u,int v){
-        int ultimate_u=findUParent(u);
-        int ultimate_v=findUParent(v);
-        if(ultimate_u==ultimate_v){
+
+    void unionBySize(int u, int v){
+
+        int ulp_u=findUpar(u);
+
+        int ulp_v=findUpar(v);
+
+        if(ulp_u == ulp_v){
+
             return;
+
         }
-        if(rank[ultimate_u]<rank[ultimate_v]){
-            parent[ultimate_u]=ultimate_v;
+
+        if(size[ulp_u] < size[ulp_v]){
+
+            parent[ulp_u]=ulp_v;
+
+            size[ulp_v]+=size[ulp_u];
+
         }
-        else if(rank[ultimate_v]<rank[ultimate_u]){
-            parent[ultimate_v]=ultimate_u;
-        }
+
         else{
-            parent[ultimate_v]=ultimate_u;
-            rank[ultimate_u]++;
+
+            parent[ulp_v]=ulp_u;
+
+            size[ulp_u]+=size[ulp_v];
+
         }
+
     }
-    void unoinBySize(int u,int v){
-        int ultimate_u=findUParent(u);
-        int ultimate_v=findUParent(v);
-        if(ultimate_u==ultimate_v){
-            return;
-        }
-        if(size[ultimate_u]<size[ultimate_v]){
-            parent[ultimate_u]=ultimate_v;
-            size[ultimate_v]+=size[ultimate_u];
-        }
-        else{
-            parent[ultimate_v]=ultimate_u;
-            size[ultimate_u]+=size[ultimate_v];
-        }
-    }
-    int count(int n){
-        int cnt=0;
-        for(int i=1;i<=n;++i){
-            if(parent[i]==i){
-                cnt++;
-            }
-        }
-        return cnt;
-    }
+
 };
 
+ 
 
-int makeGraphConnected(int n, vector < pair < int,int > > arr, int m) 
-{
-	DisjointSet ds(n);
-	for(int i=0;i<arr.size();++i){
-		ds.unoinBySize(arr[i].second,arr[i].first);
-		ds.unoinBySize(arr[i].first,arr[i].second);
-	}
-	int cc=ds.count(n);
-	int rem=arr.size()-(n-cc);
-	if(rem<cc-1){
-		return -1;
-	}
-	return cc-1;    
+int makeGraphConnected(int n, vector < pair < int,int > > edges, int m) {
+
+    // Write Your Code here 
+
+       Disjoint ds(n);
+
+        int extra=0;
+
+        for(auto it:edges){
+
+            int u=it.first;
+
+            int v=it.second;
+
+            if(ds.findUpar(u) == ds.findUpar(v)){//if they already connected to same parent then its extra edge we have to count that .
+
+                extra++;
+
+            }
+
+            else{
+
+                ds.unionBySize(u,v);//else we can merge them to single
+
+            }
+
+        }
+
+        int cnt=0;
+
+        for(int i=1;i<=n;i++){
+
+            if(i == ds.parent[i]){
+
+                cnt++;
+
+            }
+
+        }
+
+        int ans=cnt-1;//for a connnected components there requires n-1 edges .
+
+        if(extra >= ans){
+
+            return ans;
+
+        }
+
+    return -1;   
+
 }
