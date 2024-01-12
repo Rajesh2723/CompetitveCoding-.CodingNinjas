@@ -68,6 +68,7 @@ Sample Output 2:
 -1
 0 
   */
+// we can use anyone as unionBySize or UnionByRank anyone works.
 class DisjointSet{
     vector<int> rank,size,parent;
     public:
