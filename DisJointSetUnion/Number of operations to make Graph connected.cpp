@@ -69,6 +69,10 @@ Sample Output 2:
 0 
   */
 // we can use anyone as unionBySize or UnionByRank anyone works.
+/*
+	For a graph with ‘n’ vertices to be connected, there must be at least ‘N’-1 edges in the graph. If a graph has less than ‘N’-1 edges it is impossible to make the graph connected. Otherwise, it is always possible to make graph connected. As we need to find the minimum number of operations to make the graph connected we will think greedily. We will find the total number of connected components in the graph. We can treat each connected component in the graph as a single vertex. Basically, we want to shift edges such that these components become connected. Therefore answer will be the total number of connected components - 1. We can find the total number of connected components using disjoint set union.
+	*/
+
 class DisjointSet{
     vector<int> rank,size,parent;
     public:
