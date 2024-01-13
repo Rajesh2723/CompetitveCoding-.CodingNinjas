@@ -76,3 +76,54 @@ In this way, the algorithm iteratively adjusts the Euler's Totient Function valu
 I hope this explanation provides a clearer understanding of how Euler's Totient Function is related to prime factors and how the Sieve of Eratosthenes can be adapted to efficiently calculate it.
 
   */
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+const ll mex = 1e5 + 1;
+ll arr[mex];
+void sieve() {
+
+	for (ll i = 0; i < mex; i++) {
+		arr[i] = i;
+	}
+
+	for (ll i = 2; i < mex; i++) {
+		if (arr[i] == i) {//if it is same means its a prime number ,its multiple came means composite numbers.
+			arr[i] -= 1;
+			for (ll j = 2 * i; j < mex; j += i) {
+				arr[j] = arr[j] * (i - 1) / i;//phi function calculate->n*(1-1/p1)....->arr[j]*(1-1/i)
+			}
+		}
+	}
+
+
+
+}
+
+
+
+int main() {
+
+	ll t;
+	cin >> t;
+	sieve();
+	ll result[mex];
+	memset(result, 0, sizeof(result));
+	for (ll i = 1; i < mex; i++) {
+		for (ll j = 2; i * j < mex; j++) {
+			result[i * j] += (i * arr[j]);
+		}
+	}
+	ll dp[mex];
+	dp[0] = result[0];
+	for (ll i = 1; i < mex; i++) {
+		dp[i] = result[i] + dp[i - 1];//prefix array
+	}
+	while (t--) {
+		ll n;
+		cin >> n;
+		ll sum = 0;
+		cout << dp[n] << endl;
+
+	}
+}
