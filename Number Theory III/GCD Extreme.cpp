@@ -89,7 +89,7 @@ void sieve() {
 
 	for (ll i = 2; i < mex; i++) {
 		if (arr[i] == i) {//if it is same means its a prime number ,its multiple came means composite numbers.
-			arr[i] -= 1;
+			arr[i] -= 1;//phi(i,N)->if i and n are coprime i mean not composite means there are p-1 numbers will be there.
 			for (ll j = 2 * i; j < mex; j += i) {
 				arr[j] = arr[j] * (i - 1) / i;//phi function calculate->n*(1-1/p1)....->arr[j]*(1-1/i)
 			}
