@@ -30,7 +30,7 @@ Explanation
 Test case 1: 7 can only be achieved by using 2 two times and 3 one time.
 
 Test case 2: 6 can't be achieved by using 4 and 10. So, 0 ways are there.
-  /
+  */
 #include<bits/stdc++.h>
 using namespace std;
 
