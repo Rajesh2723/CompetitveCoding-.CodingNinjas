@@ -1,10 +1,18 @@
 /*
+ Problem statement
 Ninja wants to get N flowers and he will pay i + 1 amount of money for the Ith flower, example (if n=3 he will pay {2,3,4})
+
 Now he wants to pack these N flowers in boxes of different colours. With one condition if the cost of a flower is a prime divisor of another flower they needed to be of a different colour.
+
 As we know that ninja is a little money minded he wants to minimize the number of different colours of boxes that he needs.
-  4
-  output
-  2
+
+Detailed explanation ( Input/output format, Notes, Images )
+Constraints:
+1 <= N <= 2*10^5
+Sample Input:
+4
+Sample Output:
+2
 1 3
 */
 #include<bits/stdc++.h>
