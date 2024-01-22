@@ -65,6 +65,10 @@ Sample Output 1:
 //     bfs(0,adj,vis);
 //     return 0;
 // }
+arr[0] -> [0, 0, 0]
+arr[1] -> [0, 0, 0]
+arr[2] -> [0, 0, 0]
+
 #include<iostream>
 #include<queue>
 using namespace std;
