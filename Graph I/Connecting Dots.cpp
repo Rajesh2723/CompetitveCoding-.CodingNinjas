@@ -125,13 +125,13 @@ int solve(char arr[][MAXN],int n, int m)
 			{
 				return 1;
 			}
-			for (int p = 0; p < n; p++)
-			{
-				for (int q = 0; q < m; q++)
-				{
-					visited[p][q] = false;
-				}
-			}
+			// for (int p = 0; p < n; p++)
+			// {
+			// 	for (int q = 0; q < m; q++)
+			// 	{
+			// 		visited[p][q] = false;
+			// 	}
+			// }
 		}
 	}
 	return 0;
