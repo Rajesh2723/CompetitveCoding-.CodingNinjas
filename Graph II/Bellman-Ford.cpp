@@ -64,7 +64,7 @@ int main() {
             graph.push_back({a - 1, b - 1, wt});  // Adjusting vertices to 0-based indexing
         }
 
-        int result = bellmanFord(graph, src - 1, des - 1, N);
+        int result = bellmanFord(graph, src - 1, des - 1, N);//passing them as 0 based indexing.
         cout << result << endl;
     }
 
