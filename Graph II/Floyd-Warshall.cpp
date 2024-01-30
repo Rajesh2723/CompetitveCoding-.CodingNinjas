@@ -76,7 +76,7 @@ int main() {
         for (int i = 0; i < M; ++i) {
             int u, v, w;
             cin >> u >> v >> w;
-            graph[u][v] =min(graph[u][v],w);
+            graph[u][v] =min(graph[u][v],w);//here only we can take the minimum values when taking input .
             graph[v][u] =min(graph[v][u],w); // Assuming the graph is undirected
         }
 
