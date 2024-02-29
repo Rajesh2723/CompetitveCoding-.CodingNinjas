@@ -65,3 +65,36 @@ bool isSquare(vector<int> x, vector<int> y) {
                 return false;
         }
 }
+/*
+/*
+    Time Complexity: O(1)
+    Space Complexity: O(1)
+/*
+
+#include <algorithm>
+
+bool isSquare(vector<int> x, vector<int> y) {
+    vector<long long> distSq;
+    for(int i = 0; i < 4; i++) {
+        for(int j = i + 1 ; j < 4; j++) {
+            long long dist = (1LL * (x[i] - x[j]) * (x[i] - x[j])) + (1LL * (y[i] - y[j]) * (y[i] - y[j]));
+            distSq.push_back(dist);
+        }
+    }
+
+    sort(distSq.begin(), distSq.end());
+
+    
+    //Check if the distance of all the sides are equal 
+    //and the length of the diagonals are equal to the length of each side * root(2).
+    if(distSq[0] == distSq[1] &&
+       distSq[1] == distSq[2] &&
+       distSq[2] == distSq[3] &&
+       distSq[4] == distSq[5] &&
+       distSq[0] * 2LL == distSq[4] &&
+       distSq[0] > 0){
+        return true;
+    }
+    return false;
+}
+*/
