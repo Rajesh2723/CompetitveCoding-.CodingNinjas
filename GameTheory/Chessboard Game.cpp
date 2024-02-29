@@ -67,7 +67,7 @@ bool isWinning(int x, int y, vector<int> &dx, vector<int> &dy)
     for (int i = 0; i < 4; ++i)
     {
         // If a losing state is reachable, current state is winning.
-        if (isValid(x + dx[i], y + dy[i]) && !isWinning(x + dx[i], y + dy[i], dx, dy))
+        if (isValid(x + dx[i], y + dy[i]) && !isWinning(x + dx[i], y + dy[i], dx, dy))//If a losing state is reachable from the current state, then the current state is winning, so it sets isWin to true and breaks out of the loop.
         {
             isWin = true;
             break;
