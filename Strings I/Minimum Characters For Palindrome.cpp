@@ -54,14 +54,14 @@ int minCharsforPalindrome(string str) {
 	return c;
 	
 }
-/*
+
 /*
     Time complexity: O(N)
     Space complexity: O(N)
     
     Where N is length of the string.    
 */
-
+/*
 #include <vector>
 
 // Function for calculating lps array
