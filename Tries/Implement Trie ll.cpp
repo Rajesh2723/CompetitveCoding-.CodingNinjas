@@ -126,10 +126,10 @@ class Trie{
         Node*node=root;
         for(int i=0;i<word.size();i++){
             if(!node->Contains(word[i])){
-               node->put(word[i],new Node());
+               node->put(word[i],new Node()); //if word is not present then we are pushing to trie.
                 
             }
-            node=node->get(word[i]);
+            node=node->get(word[i]);   --->node is present so we are increasing the prefic count.
             node->increasePrefix();
         }
         node->IncreasedEnd();
@@ -139,7 +139,7 @@ class Trie{
           Node*node=root;
           for(int i=0;i<word.size();i++){
               if(node->Contains(word[i])){
-                  node=node->get(word[i]);
+                  node=node->get(word[i]);  
               }else
 
             return 0;
