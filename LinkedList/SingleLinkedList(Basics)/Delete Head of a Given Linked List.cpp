@@ -65,3 +65,13 @@ Node * deleteHead(Node *head) {
      head=head->next;
      return head;
 }
+/*
+Node * deleteHead(Node *head) {
+
+    Node*temp=head;
+     head=head->next;
+     delete temp;
+     return head;
+}
+*/
+
