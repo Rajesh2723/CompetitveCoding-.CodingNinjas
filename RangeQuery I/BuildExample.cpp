@@ -18,7 +18,7 @@ void build(int start,int end,int pos,int *tree,int *arr){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    int *tree=new int[4*n]();
+    int *tree=new int[4*n]();//initialize size to maximum value since it may overflow
     build(0,n-1,0,tree,arr);
     for(int i=0;i<2*n-1;i++){
         cout<<tree[i]<<endl;
