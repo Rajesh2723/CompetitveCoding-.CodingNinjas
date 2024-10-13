@@ -26,27 +26,27 @@ Sample Output
 
 using namespace std;
 
-vector<int> sieve_of_eratosthenes(int n) {
-    vector<bool> primes(n + 1, true);
-    primes[0] = primes[1] = false;
-    for (int i = 2; i <= sqrt(n); ++i) {
-        if (primes[i]) {
-            for (int j = i * i; j <= n; j += i) {
-                primes[j] = false;
-            }
-        }
-    }
-    vector<int> prime_list;
-    for (int i = 2; i <= n; ++i) {
-        if (primes[i]) {
-            prime_list.push_back(i);
-        }
-    }
-    return prime_list;
-}
+// vector<int> sieve_of_eratosthenes(int n) {
+//     vector<bool> primes(n + 1, true);
+//     primes[0] = primes[1] = false;
+//     for (int i = 2; i <= sqrt(n); ++i) {
+//         if (primes[i]) {
+//             for (int j = i * i; j <= n; j += i) {
+//                 primes[j] = false;
+//             }
+//         }
+//     }
+//     vector<int> prime_list;
+//     for (int i = 2; i <= n; ++i) {
+//         if (primes[i]) {
+//             prime_list.push_back(i);
+//         }
+//     }
+//     return prime_list;
+// }
 
 vector<int> precalculate_factors(int max_num) {
-    vector<int> primes = sieve_of_eratosthenes(max_num);
+    // vector<int> primes = sieve_of_eratosthenes(max_num);
     vector<int> dp(max_num + 1, 0);
     for (int i = 2; i <= max_num; ++i) {
         if (dp[i] == 0) {
