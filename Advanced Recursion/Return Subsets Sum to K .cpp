@@ -1,6 +1,6 @@
 /*
 For the array'ARR' = {2, 4, 6}, we can have subsets {}, {2}, {4}, {6}, {2, 4}, {2, 6}, {4, 6}, {2, 4, 6}. Out of these 8 subsets, {2, 4} and {6} sum to the given 'K' i.e. 6. 
-  */
+ make a tree for dry run and iterate it */
 void solve(vector<int> arr, int n, int k,int index,vector<vector<int>>& ans,
 
  vector<int>&ds){
