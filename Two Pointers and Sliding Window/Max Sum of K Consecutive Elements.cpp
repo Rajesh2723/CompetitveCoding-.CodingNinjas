@@ -207,3 +207,42 @@ int maxOfK(int n, int k, vector<int> &num)
    return maxi;
 }
 */
+/*
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxiK(int n,int k,vector<int>&nums){
+    int sum=0;
+    int i=0;
+    int count=0;
+    int maxi=INT_MIN;
+    for(int j=0;j<n;j++){
+        sum+=nums[j];
+        count=(j-i+1);
+        if(count==k){
+            maxi=max(maxi,sum);
+            sum-=nums[i];
+            i++;
+        }
+    }
+    return maxi;
+}
+
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    vector<int>nums(n);
+    for(int i=0;i<n;i++)cin>>nums[i];
+    cout<<maxiK(n,k,nums)<<endl;
+}
+*/
