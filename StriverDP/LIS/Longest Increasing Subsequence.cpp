@@ -33,3 +33,23 @@ int f(int index,int prefIndex,int n,vector<int>&nums,vector<vector<int>>&dp){
         return f(0,-1,n,nums,dp);//pass -1 as we set prefIndex to -1 
     }
 };
+
+//tabulation
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int lengthOfLIS(vector<int>& nums) {
+    int n = nums.size();
+    if (n == 0) return 0;
+    vector<int> dp(n, 1); // dp[i] = length of LIS ending at i
+
+    for (int i = 1; i < n; ++i) {
+        for (int j = 0; j < i; ++j) {
+            if (nums[i] > nums[j]) {
+                dp[i] = max(dp[i], dp[j] + 1);
+            }
+        }
+    }
+    return *max_element(dp.begin(), dp.end());
+}
