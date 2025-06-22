@@ -34,6 +34,31 @@ bool subsetSumToK(int n, int k, vector<int> &nums) {
     vector<vector<int>>dp(n,vector<int>(k+1,-1));//creating dp with changing states parameters(index,target)
         return findPartition(n-1,nums,dp,k);
 }
- 
+
+//tabulation code
+bool subsetSumToK(int n, int k, vector<int> &nums) {
+    vector<vector<int>>dp(n,vector<int>(k+1,-1));//creating dp with changing states parameters(index,target)
+    
+    for (int i = 0; i < n; i++) dp[i][0] = true;
+     if (nums[0] <= k) dp[0][nums[0]] = true;
+    
+    for(int index=1;index<n;index++){
+        for(int l=1;l<=k;l++){
+            bool nottake=dp[index-1][l];
+            bool take=false;
+            if(l>=nums[index]){
+                take=dp[index-1][l-nums[index]];
+            }
+            
+            dp[index][l]=take||nottake;
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<k;j++){
+            cout<<dp[i][j]<<endl;
+        }
+    }
+    return dp[n-1][k];
+}
 
     
